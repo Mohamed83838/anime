@@ -1,0 +1,16 @@
+   bool islogged= false;
+     Future<bool> getdata()async{
+  final prefs = await SharedPreferences.getInstance();
+    final bool? repeat = prefs.getBool('islogged');
+    if (repeat ==true){
+      return true;
+    }else {
+     return false;
+    }
+    
+    }
+    getdata();
+    showSnackBar(context, "${islogged}");
+    print(getdata());
+    print(islogged);
+   
